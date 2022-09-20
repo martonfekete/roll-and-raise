@@ -4,7 +4,8 @@
   "description": "A simple JS class to handle rolling for raises in 7thSea 2E",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm version minor"
   },
   "repository": {
     "type": "git",

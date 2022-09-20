@@ -1,33 +1,33 @@
-import { OPTION_KEYS } from "./optionKeys";
+import { OptionKeys, RollAndRaiseOptions } from "./roll-and-raise.model";
 
 export class RollsAndResults {
-  results;
-  rolls;
+  results: number[];
+  rolls: number[];
 
-  private props;
-  private transformedRolls;
-  private logger;
+  private props: RollAndRaiseOptions;
+  private transformedRolls: number[];
+  private logger: boolean;
 
   get base() {
-    return this.props[OPTION_KEYS.BASE] || 10;
+    return this.props[OptionKeys.BASE] || 10;
   }
   get rerollLowest() {
-    return this.props[OPTION_KEYS.REROLL];
+    return this.props[OptionKeys.REROLL];
   }
   get legendary() {
-    return this.props[OPTION_KEYS.LEGENDARY];
+    return this.props[OptionKeys.LEGENDARY];
   }
   get increaseRolls() {
-    return this.props[OPTION_KEYS.PLUSONE];
+    return this.props[OptionKeys.PLUSONE];
   }
   get explode10s() {
-    return this.props[OPTION_KEYS.EXPLODE];
+    return this.props[OptionKeys.EXPLODE];
   }
   get vivre() {
-    return this.props[OPTION_KEYS.VIVRE];
+    return this.props[OptionKeys.VIVRE];
   }
 
-  constructor(dice, props, logger = true) {
+  constructor(dice: number, props: RollAndRaiseOptions, logger = true) {
     this.props = props;
     this.logger = logger;
     this.results = this.generateResults(dice);

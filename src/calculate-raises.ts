@@ -1,13 +1,14 @@
+import { RaiseSet, RollAndRaiseOptions } from "./roll-and-raise.model";
 import { RollsAndResults } from "./rolls-and-results";
 
 export class CalculatedRaises extends RollsAndResults {
-  sets;
-  raises;
-  remainders;
-  results;
-  rolls;
+  sets: number[][];
+  raises: number;
+  remainders: number[];
+  results: number[];
+  rolls: number[];
 
-  constructor(dice, props, logger = true) {
+  constructor(dice: number, props: RollAndRaiseOptions, logger = true) {
     super(dice, props, logger);
 
     const calculation = this.calculateRaises();
@@ -17,7 +18,7 @@ export class CalculatedRaises extends RollsAndResults {
     this.remainders = calculation.remainders;
   }
 
-  calculateRaises(rolls = this.results, raises: number[][] = []) {
+  calculateRaises(rolls = this.results, raises: number[][] = []): RaiseSet {
     rolls.sort((a, b) => b - a);
     super.log(`modified rolls: ${rolls.join()}`);
     // remove tens
@@ -32,7 +33,7 @@ export class CalculatedRaises extends RollsAndResults {
     return this.makeSets(rolls, raises);
   }
 
-  makeSets(rolls: number[], raises: number[][] = [], count = 1) {
+  makeSets(rolls: number[], raises: number[][] = [], count = 1): RaiseSet {
     super.log(`rolls: ${rolls.join()}`);
     if (rolls.length > count) {
       super.log(`have enough rolls (${rolls.length}) to try make sets`);
