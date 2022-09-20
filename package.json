@@ -1,0 +1,22 @@
+{
+  "name": "@7thsea-tools/roll-and-raise",
+  "version": "0.0.2",
+  "description": "A simple JS class to handle rolling for raises in 7thSea 2E",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martonfekete/roll-and-raise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martonfekete/roll-and-raise/issues"
+  },
+  "homepage": "https://github.com/martonfekete/roll-and-raise#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
+}

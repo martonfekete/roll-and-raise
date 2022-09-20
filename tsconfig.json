@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "allowJs": true,
+    "target": "es2016",
+    "declaration": true
+  },
+  "include": ["./index.ts", "./src/**/*"]
+}
